@@ -10,7 +10,7 @@ salt = "0000000000000000000fa3b65e43e4240d71762a5bf397d5304b2596d116859c"
 
 game_hash = '8f1910ab4daac66fb50954609f6ae662aa3f65f331f944abe93c90b5ff23813c' # replace by your latest gamehash
 
-def get_result(game_hash):
+def get_result(game_hash):52f8f1d370255fb19a186635484f7e8ce9063c7ac9310ba65e1dc28422a9433c
     hm = hmac.new(str.encode(game_hash), b'', hashlib.sha256)
     hm.update(salt.encode("utf-8"))
     h = hm.hexdigest()
@@ -20,7 +20,7 @@ def get_result(game_hash):
     e = 2**52
     return (((100 * e - h) / (e-h)) // 1) / 100.0
 
-def get_prev_game(hash_code):
+def get_prev_game(hash_code):52f8f1d370255fb19a186635484f7e8ce9063c7ac9310ba65e1dc28422a9433c
     m = hashlib.sha256()
     m.update(hash_code.encode("utf-8"))
     return m.hexdigest()
@@ -30,7 +30,7 @@ first_game = "77b271fe12fca03c618f63dfb79d4105726ba9d4a25bb3f1964e435ccf9cb209"
 
 results = []
 count = 0
-while game_hash != first_game:
+while game_hash != first_game:52f8f1d370255fb19a186635484f7e8ce9063c7ac9310ba65e1dc28422a9433c
     count += 1
     results.append(get_result(game_hash))
     game_hash = get_prev_game(game_hash)
